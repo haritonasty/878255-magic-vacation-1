@@ -161,6 +161,22 @@
     height: 40px;
   }
 
+  &--prev {
+    animation-name: rollInLeft;
+    animation-duration: 0.3s;
+    animation-delay: 1.2s;
+    animation-fill-mode: backwards;
+    animation-timing-function: ease-out;
+  }
+
+  &--next {
+    animation-name: rollInRight;
+    animation-duration: 0.3s;
+    animation-delay: 1.2s;
+    animation-fill-mode: backwards;
+    animation-timing-function: ease-out;
+  }
+
   &::before {
     @include center;
     content: "";
@@ -234,6 +250,12 @@
   font-size: 2.4rem;
   line-height: 4rem;
 
+  animation-name: fadeIn;
+  animation-duration: 0.2s;
+  animation-delay: 1.2s;
+  animation-fill-mode: backwards;
+  animation-timing-function: ease-out;
+
   @media (min-width: $stop-scaling) {
     bottom: 28px;
     width: 90px;
@@ -293,4 +315,18 @@
 
 .swiper-slide-next .slider__item-text {
   animation-delay: 1s;
+}
+
+@keyframes rollInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-6rem) rotate(-180deg);
+  }
+}
+
+@keyframes rollInRight {
+  from {
+    opacity: 0;
+    transform: translateX(6rem) rotate(180deg);
+  }
 }
